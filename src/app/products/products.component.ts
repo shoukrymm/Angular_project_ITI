@@ -20,22 +20,52 @@ export class ProductsComponent implements OnInit {
 
 
   constructor() { 
-    this.discount=DiscountOffers.Discount10;
+    this.discount=DiscountOffers.NoDiscount;
     this.storeName="Lion Store";
     this.storeLogo="../../assets/logo.jpg";
     this.productList=[
       {
         id:1,
-        name:"mobile",
+        name:"IPhone",
         quantity:1,
         price:1000,
-        image:""
-      }
+        image:"../../assets/iphone.jpg"
+      },
+      {
+        id:2,
+        name:"Samsung",
+        quantity:2,
+        price:2000,
+        image:"../../assets/samsung.jpg"
+      },
+      {
+        id:3,
+        name:"Dell",
+        quantity:3,
+        price:3000,
+        image:"../../assets/dell.jpg"
+      },
+      {
+        id:4,
+        name:"HP",
+        quantity:4,
+        price:4000,
+        image:"../../assets/hp.png"
+      },
+
     ]
     this.categoryList=[
       {
         id:10,
         name:"mobiles"
+      },
+      {
+        id:20,
+        name:"Laptops"
+      },
+      {
+        id:30,
+        name:"glasses"
       }
     ]
     this.clientName="ahmed"
@@ -43,6 +73,12 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  showTable() {
+
+    this.isPurshased = !this.isPurshased
+    
   }
 
 
