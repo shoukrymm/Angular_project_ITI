@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../services/product.service';
 import { DiscountOffers } from '../sharedClassesAndFiles/discountOffers';
 import { iCategory } from '../sharedClassesAndFiles/iCategory';
 import { iProduct } from '../sharedClassesAndFiles/iProduct';
@@ -19,7 +20,7 @@ export class ProductsComponent implements OnInit {
   isPurshased:boolean=false;
 
 
-  constructor() { 
+  constructor(private service:ProductService) { 
     this.discount=DiscountOffers.NoDiscount;
     this.storeName="Lion Store";
     this.storeLogo="../../assets/logo.jpg";
@@ -81,6 +82,10 @@ export class ProductsComponent implements OnInit {
     
   }
 
+  RenderValues(){
+    this.productList = this.service.getAllProducts();
+    this.isPurshased = false;
+  }
 
 }
 
