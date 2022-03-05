@@ -18,6 +18,7 @@ export class ProductsComponent implements OnInit {
   categoryList:iCategory[];
   clientName:string;
   isPurshased:boolean=false;
+  errorMsg:any
 
 
   constructor(private service:ProductService) { 
@@ -74,6 +75,16 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.service.getAllProducts.subscribe(productData=>{this.productList=productData},
+    // error=>{this.errorMsg = error}  )
+    this.service.getAllProducts().subscribe(
+      productData => {
+        this.productList=productData
+      },
+      error =>{
+        this.errorMsg=error
+      }
+    )
   }
 
   showTable() {
@@ -83,7 +94,7 @@ export class ProductsComponent implements OnInit {
   }
 
   RenderValues(){
-    this.productList = this.service.getAllProducts();
+    // this.productList = this.service.getAllProducts();
     this.isPurshased = false;
   }
 

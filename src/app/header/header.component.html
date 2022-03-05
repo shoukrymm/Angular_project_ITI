@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="assets/logo.jpg" width="50" height="50" alt="">
       </a>
@@ -9,25 +9,36 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="/Home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="/Products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Users">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Posts">Posts</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Categories
             </a>
+            <!-- <div *ngFor="let item in categoryList"></div>
+<select name="" id="">
+    <option value="">{{categoryList[0].name}}</option>
+    <option value="">{{categoryList[1].name}}</option>
+    <option value="">{{categoryList[2].name}}</option>
+</select> -->
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">{{categoryList[0].name}}</a></li>
+              <li><a class="dropdown-item" href="#">{{categoryList[1].name}}</a></li>
+              <li><a class="dropdown-item" href="#">{{categoryList[2].name}}</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+          
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
