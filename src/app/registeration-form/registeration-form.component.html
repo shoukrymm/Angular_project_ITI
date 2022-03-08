@@ -1,0 +1,44 @@
+<div class="container">
+    <form action="" [formGroup]="registerationForm" >
+        <div class="form-group">
+            <label for="">Username</label>
+            <input  type="text" [class.is-invalid]="registerationForm.get('userName')?.invalid && registerationForm.get('userName')?.touched" formControlName="userName" class="form-control" name="" id="">
+            <small class="text-danger" [class.d-none]="registerationForm.get('userName')?.valid || registerationForm.get('userName')?.untouched">Username is requierd</small>
+        </div>
+        <div class="form-group">
+            <label for="">Password</label>
+            <input type="text" formControlName="password" class="form-control" name="" id="">
+        </div>
+        <div class="form-group">
+            <label for="">Confirm Password</label>
+            <input type="text" formControlName="confirmPassword" class="form-control" name="" id="">
+            <small class="text-danger" *ngIf="registerationForm?.errors?.['misMatch']">Not match password</small>
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="text" [class.is-invalid]="registerationForm.get('email')?.touched && registerationForm.get('email')?.invalid" formControlName="email" class="form-control" name="" id="">
+            <small class="text-danger" [class.d-none]="registerationForm.get('email')?.valid || registerationForm.get('email')?.untouched">Email is requiered</small>
+        </div>
+        <div class="form-check mb-3">
+            <input type="checkbox" (click)="setEmailValidator()" class="form-check-input" formControlName="subscribe" name="" id="">
+            <label class="form-check-label" for="" >Send me offers</label>
+        </div>
+        <div formGroupName="address">
+            <div class="form-group">
+                <label for="">City</label>
+                <input type="text" formControlName="city" class="form-control" name="" id="">
+            </div>
+            <div class="form-group">
+                <label for="">Street</label>
+                <input type="text" formControlName="street" class="form-control" name="" id="">
+            </div>
+            <div class="form-group">
+                <label for="">Postal code</label>
+                <input type="text" formControlName="postalCode" class="form-control" name="" id="">
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-success" (click)="loadData()">Get API Data</button>
+        <input type="submit" value="SUBMIT" class="btn btn-primary" name="" id="">
+    </form>
+</div>

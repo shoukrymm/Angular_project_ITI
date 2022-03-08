@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PostsComponent } from './posts/posts.component';
 import { ProductsComponent } from './products/products.component';
+import { RegisterationFormComponent } from './registeration-form/registeration-form.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:"Products",component:ProductsComponent},
   {path:"Users",component:UsersComponent},
   {path:"Posts",component:PostsComponent},
+  {path:"Register",component:RegisterationFormComponent},
   {path:"**",component:PageNotFoundComponent}
 ];
 
